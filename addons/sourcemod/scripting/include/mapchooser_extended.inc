@@ -41,7 +41,7 @@
 
 // MCE 1.9 series
 
-enum CanNominateResult
+enum CanNominateResult:
 {
 	CanNominate_No_VoteFull,		/** No, nominations list is full */
 	CanNominate_No_VoteInProgress,	/** No, map vote is in progress */
@@ -54,29 +54,29 @@ enum CanNominateResult
  * Called whenever warning timer starts
  * 
  */
-forward OnMapVoteWarningStart();
+forward void OnMapVoteWarningStart();
 
 /**
  * Called whenever runoff warning timer starts
  */
-forward OnMapVoteRunnoffWarningStart();
+forward void OnMapVoteRunnoffWarningStart();
 
 /**
  * Called whenever the timer ticks
  */
-forward OnMapVoteWarningTick(time);
+forward void OnMapVoteWarningTick(time);
 
 /**
  * Called whenever vote starts
  * 
  * @deprecated Will be removed in MapChooser 1.8.  Use OnMapVoteStarted instead.
  */
-forward OnMapVoteStart();
+forward void OnMapVoteStart();
 
 /**
  * Called whenever vote ends
  */
-forward OnMapVoteEnd(const String:map[]);
+forward void OnMapVoteEnd(const char[] map);
 
 /**
  * Is a map on the current game's official list?
@@ -85,16 +85,16 @@ forward OnMapVoteEnd(const String:map[]);
  * @param map 	Name of map to check
  * @return 		true if it's on the list of official maps for this game
  */
-native bool:IsMapOfficial(const String:map[]);
+native bool IsMapOfficial(const char[] map);
 
 /**
  * Is nominate allowed?
  * 
  * @return		A CanNominateResult corresponding to whether a vote is allowed or not
  */
-native CanNominateResult:CanNominate();
+native CanNominateResult CanNominate();
 
-public SharedPlugin:__pl_mapchooser_extended = 
+public SharedPlugin __pl_mapchooser_extended = 
 {
 	name = "mapchooser",
 	file = "mapchooser_extended.smx",
