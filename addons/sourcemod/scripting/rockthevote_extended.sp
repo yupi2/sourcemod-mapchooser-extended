@@ -37,15 +37,13 @@
 #include "include/mapchooser_extended"
 #include <nextmap>
 #include <colors>
-#include <cstrike> // Used for the "CS_TEAM_SPECTATOR" definition.
+#include <cstrike> // Used for team definitions.
 
 #pragma semicolon 1
 
 // "specrtv" version includes the ability to disable spectators RTVing and
 // counting towards the votes needed to change the map.
 #define MCE_VERSION "1.10.2-specrtv"
-
-#define TESTING 0
 
 public Plugin:myinfo =
 {
