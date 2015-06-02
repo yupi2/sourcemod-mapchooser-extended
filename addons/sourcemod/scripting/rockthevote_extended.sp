@@ -250,9 +250,9 @@ public PlayerTeam_RTVCheck(Handle:event, const String:name[], bool:dontBroadcast
 
 // This callback was added if the CVAR is changed and thus enabling/disabling the spectator's ability to RTV.
 // If "0" we can remove the votes from the spectators and see if the vote will start.
-public AllowSpectatorRTV_Callback(ConVar convar, const String:oldValue[], const String:newValue[])
+public AllowSpectatorRTV_Callback(Handle:convar, const String:oldValue[], const String:newValue[])
 {
-	new bool:allowSpectatorRTV = convar.BoolValue;
+	new bool:allowSpectatorRTV = GetConVarBool(g_Cvar_AllowSpectatorRTV);
 	g_Voters = 0;
 
 	// Great place for a bird to live...it's a joke about nested if-statements...
