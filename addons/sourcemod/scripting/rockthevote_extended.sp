@@ -256,7 +256,7 @@ public AllowSpectatorRTV_Callback(Handle:convar, const String:oldValue[], const 
 	g_Voters = 0;
 
 	// Great place for a bird to live...it's a joke about nested if-statements...
-	for (new i = 1; i < MaxClients; ++i)
+	for (new i = 1; i <= MaxClients; ++i)
 	{
 		if (IsClientConnected(i) && !IsFakeClient(i))
 		{
